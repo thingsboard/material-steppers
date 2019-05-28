@@ -89,6 +89,12 @@ md-step-actions {
 .md-steppers:not(.md-steppers-linear) .md-stepper-indicator.md-editable.md-completed:hover .md-stepper-indicator-wrapper {
   background-color: #F6F6F6;
 }
+.md-steppers:not(.md-steppers-linear) .md-stepper-indicator:not(.md-active) .md-button.md-fab.md-stepper-numbers {
+  cursor: pointer;
+}
+.md-steppers:not(.md-steppers-linear) .md-stepper-indicator.md-active .md-button.md-fab.md-stepper-numbers {
+  cursor: default;
+}
 .md-steppers-header {
   margin: 0;
   display: -webkit-flex;
@@ -146,7 +152,7 @@ md-step-actions {
 }
 .md-stepper-indicator.md-completed .md-stepper-number,
 .md-stepper-indicator.md-active .md-stepper-number {
-  background-color: #2196F3;
+  background-color: currentColor;
 }
 .md-stepper-indicator.md-completed .md-stepper-title,
 .md-stepper-indicator.md-active .md-stepper-title {
@@ -187,7 +193,6 @@ md-step-actions {
   -webkit-align-content: center;
       -ms-flex-line-pack: center;
           align-content: center;
-  background-color: #fff;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .md-stepper-number {
@@ -286,6 +291,9 @@ md-step-actions {
 .md-steppers-linear .md-stepper-indicator.md-editable.md-completed:hover .md-stepper-number:before,
 .md-steppers-linear .md-stepper-indicator.md-editable.md-completed:hover .md-stepper-number:after {
   background-color: #F6F6F6;
+}
+.md-steppers-linear .md-stepper-indicator .md-button.md-fab.md-stepper-numbers {
+  cursor: default;
 }
 .md-steppers-linear .md-stepper-title {
   color: rgba(0, 0, 0, 0.26);
@@ -505,4 +513,22 @@ md-step-body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.md-button.md-fab.md-stepper-numbers {
+  width: 24px;
+  height: 24px;
+  min-height: 24px;
+  margin: 0 8px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+  box-shadow: none;
+  padding: 0;
+}
+.md-button.md-fab.md-stepper-numbers.ng-hide {
+  transition: none;
+}
+.md-button:not([disabled]).md-fab:active {
+  box-shadow: none;
 }

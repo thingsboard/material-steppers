@@ -259,7 +259,7 @@ angular.module('mdSteppers', ['ngMaterial'])
             // }
         };
     })
-    .directive('mdStep', ['$compile', ($compile) => {
+    .directive('mdStep', ['$compile', '$mdTheming', ($compile, $mdTheming) => {
         return {
             require: '^^mdStepper',
             transclude: true,
@@ -271,6 +271,7 @@ angular.module('mdSteppers', ['ngMaterial'])
             controller: StepCtrl,
             controllerAs: '$ctrl',
             link: (scope: any, iElement: ng.IRootElementService, iAttrs, stepperCtrl: StepperCtrl) => {
+                $mdTheming(iElement);
                 function addOverlay() {
                     let hasOverlay = !!iElement.find('.md-step-body-overlay')[0];
                     if (!hasOverlay) {

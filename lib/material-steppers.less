@@ -89,6 +89,27 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
           background-color: #F6F6F6;
         }
       }
+
+
+      &:not(.md-active) {
+        .md-button {
+          &.md-fab {
+            &.md-stepper-numbers {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      &.md-active {
+        .md-button {
+          &.md-fab {
+            &.md-stepper-numbers {
+              cursor: default;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -146,7 +167,7 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
   &.md-completed,
   &.md-active {
     .md-stepper-number {
-      background-color: #2196F3;
+      background-color: currentColor;
     }
 
     .md-stepper-title {
@@ -198,7 +219,6 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
   display: flex;
   align-items: center;
   align-content: center;
-  background-color: #fff;
   transition: @swift-ease-out;
 }
 
@@ -340,6 +360,14 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
         &:before,
         &:after {
           background-color: #F6F6F6;
+        }
+      }
+    }
+
+    .md-button {
+      &.md-fab {
+        &.md-stepper-numbers {
+          cursor: default;
         }
       }
     }
@@ -598,4 +626,33 @@ md-step-body{
     max-width: 100%;
     justify-content: center;
   }
+}
+
+.md-button {
+  &.md-fab{
+    &.md-stepper-numbers{
+      @size: 24px;
+
+      width: @size;
+      height: @size;
+      min-height: @size;
+      margin: 0 8px;
+      transition: @swift-ease-out;
+      font-size: 12px;
+      line-height: @size;
+      text-align: center;
+      box-shadow: none;
+      padding: 0;
+
+      &.ng-hide {
+        transition: none;
+      }
+    }
+  }
+  &:not([disabled]).md-fab:active {
+    box-shadow: none;
+  }
+  //&.md-primary.md-fab:not([disabled]):hover, .md-primary.md-fab:not([disabled]):hover, .md-primary.md-fab:not([disabled]):hover{
+  //  background-color: transparent;
+  //}
 }
