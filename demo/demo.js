@@ -78,7 +78,6 @@ angular.module('SteppersApp', [
 ]).config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
         .primaryPalette('pink')
-        .accentPalette('orange')
-        .dark();
+        .accentPalette('orange');
 }).controller('SteppersDemoCtrl', StepperDemoController);
 

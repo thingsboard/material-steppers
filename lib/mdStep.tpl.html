@@ -1,6 +1,6 @@
 <div class="md-stepper" ng-class="{ 'md-active': $ctrl.isActive() }">
     <md-steppers-header class="md-steppers-header md-steppers-vertical">
-        <button class="md-stepper-indicator" ng-class="{
+        <md-button class="md-stepper-indicator" ng-class="{
                     'md-active': $ctrl.stepNumber === $ctrl.$stepper.currentStep,
                     'md-completed': $ctrl.$stepper.isCompleted($ctrl.stepNumber),
                     'md-error': $ctrl.hasError,
@@ -9,19 +9,19 @@
                 ng-disabled="$ctrl.$stepper.linear || $ctrl.stepNumber === $ctrl.$stepper.currentStep">
             <div class="md-stepper-indicator-wrapper">
                 <md-button class="md-fab md-primary md-stepper-numbers" md-no-ink ng-disabled="!stepper.isCompleted(stepNumber) && stepNumber !== stepper.currentStep" ng-hide="$step.hasError">
-                    <span ng-if="!stepper.isCompleted(stepNumber)">{{ ::stepNumber+1 }}</span>
+                    <span ng-if="!stepper.isCompleted(stepNumber)">{{ ::$ctrl.stepNumber+1 }}</span>
                     <md-icon md-svg-icon="steppers-check" class="md-stepper-icon md-warn" ng-if="stepper.isCompleted(stepNumber)"></md-icon>
                 </md-button>
-                <div class="md-stepper-number" ng-hide="$ctrl.hasError">
-                    <span ng-if="!$ctrl.$stepper.isCompleted($ctrl.stepNumber)">{{ ::$ctrl.stepNumber+1 }}</span>
-                    <md-icon md-svg-icon="steppers-check" class="md-stepper-icon"
-                             ng-if="$ctrl.$stepper.isCompleted($ctrl.stepNumber)"></md-icon>
-                </div>
+                <!--<div class="md-stepper-number" ng-hide="$ctrl.hasError">-->
+                    <!--<span ng-if="!$ctrl.$stepper.isCompleted($ctrl.stepNumber)">{{ ::$ctrl.stepNumber+1 }}</span>-->
+                    <!--<md-icon md-svg-icon="steppers-check" class="md-stepper-icon"-->
+                             <!--ng-if="$ctrl.$stepper.isCompleted($ctrl.stepNumber)"></md-icon>-->
+                <!--</div>-->
                 <div class="md-stepper-error-indicator md-warn" ng-show="$ctrl.hasError">
                     <md-icon md-svg-icon="steppers-warning"></md-icon>
                 </div>
 
-                <div class="md-stepper-title">
+                <div class="md-stepper-text md-body-1">
                     <span>{{ $ctrl.label }}</span>
                     <small ng-if="$ctrl.optional && !$ctrl.hasError">{{ $ctrl.optional }}</small>
                     <small class="md-stepper-error-message" ng-show="$ctrl.hasError">
@@ -29,7 +29,7 @@
                     </small>
                 </div>
             </div>
-        </button>
+        </md-button>
         <div class="md-stepper-feedback-message" ng-show="stepper.hasFeedback">
             {{stepper.feedbackMessage}}
         </div>
