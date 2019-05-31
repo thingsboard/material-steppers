@@ -127,6 +127,7 @@ md-step-actions {
 }
 .md-button.md-stepper-indicator {
   margin: 0;
+  min-height: auto;
   padding: 0 16px;
   position: relative;
   display: -webkit-flex;
