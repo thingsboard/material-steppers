@@ -22,16 +22,16 @@
                         <md-icon md-svg-icon="steppers-check" class="md-stepper-icon"
                                  ng-if="stepper.isCompleted(stepNumber)"></md-icon>
                     </md-button>
-                    <!--<div class="md-stepper-number md-primary" ng-hide="$step.hasError">-->
-                        <!--<span ng-if="!stepper.isCompleted(stepNumber)">{{ ::stepNumber+1 }}</span>-->
-                        <!--<md-icon md-svg-icon="steppers-check" class="md-stepper-icon"-->
-                                 <!--ng-if="stepper.isCompleted(stepNumber)"></md-icon>-->
-                    <!--</div>-->
+                    <div class="md-stepper-number" ng-hide="$step.hasError" md-color="{color: 'primary'}">
+                        <span ng-if="!stepper.isCompleted(stepNumber)">{{ ::stepNumber+1 }}</span>
+                        <md-icon md-svg-icon="steppers-check" class="md-stepper-icon"
+                                 ng-if="stepper.isCompleted(stepNumber)"></md-icon>
+                    </div>
 
                     <div class="md-stepper-error-indicator md-warn" ng-show="$step.hasError">
                         <md-icon md-svg-icon="steppers-warning"></md-icon>
                     </div>
-                    <span md-colors="{color:'backgroud'}">{{ $step.label }}</span>
+                    <span>{{ $step.label }}</span>
                     <div class="md-stepper-title md-body-1">
                         <span>{{ $step.label }}</span>
                         <small ng-if="$step.optional && !$step.hasError">{{ $step.optional }}</small>

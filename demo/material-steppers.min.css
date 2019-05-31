@@ -125,7 +125,7 @@ md-step-actions {
   background-color: rgba(0, 0, 0, 0.12);
   content: " ";
 }
-.md-stepper-indicator {
+.md-button.md-stepper-indicator {
   margin: 0;
   padding: 0 16px;
   position: relative;
@@ -147,37 +147,37 @@ md-step-actions {
   border: none;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.md-stepper-indicator:focus {
+.md-button.md-stepper-indicator:focus {
   outline: none;
 }
-.md-stepper-indicator.md-completed .md-stepper-number,
-.md-stepper-indicator.md-active .md-stepper-number {
+.md-button.md-stepper-indicator.md-completed .md-stepper-number,
+.md-button.md-stepper-indicator.md-active .md-stepper-number {
   background-color: currentColor;
 }
-.md-stepper-indicator.md-completed .md-stepper-title,
-.md-stepper-indicator.md-active .md-stepper-title {
+.md-button.md-stepper-indicator.md-completed .md-stepper-title,
+.md-button.md-stepper-indicator.md-active .md-stepper-title {
   color: rgba(0, 0, 0, 0.87);
 }
-.md-stepper-indicator.md-active .md-stepper-title,
-.md-stepper-indicator.md-editable .md-stepper-title {
+.md-button.md-stepper-indicator.md-active .md-stepper-title,
+.md-button.md-stepper-indicator.md-editable .md-stepper-title {
   font-weight: 500;
 }
-.md-stepper-indicator.md-error .md-stepper-title {
+.md-button.md-stepper-indicator.md-error .md-stepper-title {
   color: #f44336;
 }
-.md-stepper-indicator:first-child {
+.md-button.md-stepper-indicator:first-child {
   padding-left: 0;
 }
-.md-stepper-indicator:last-child {
+.md-button.md-stepper-indicator:last-child {
   padding-right: 0;
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.md-stepper-indicator:last-child .md-stepper-indicator-wrapper {
+.md-button.md-stepper-indicator:last-child .md-stepper-indicator-wrapper {
   padding-right: 24px;
 }
-.md-stepper-indicator .md-ripple-container {
+.md-button.md-stepper-indicator .md-ripple-container {
   z-index: 3;
 }
 .md-stepper-indicator-wrapper {
@@ -385,7 +385,7 @@ md-step-actions {
   padding: 8px 24px;
 }
 .md-steppers-vertical .md-steppers-scope {
-  margin-left: 20px;
+  margin-left: 19px;
   border-left: 1px solid  #E8E8E8;
   padding-left: 20px;
 }
