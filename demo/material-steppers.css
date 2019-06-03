@@ -247,6 +247,7 @@ md-step-actions {
   position: relative;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   font-size: 14px;
+  font-weight: 400;
   line-height: 24px;
 }
 .md-steppers-content {
@@ -301,6 +302,9 @@ md-step-actions {
 }
 .md-steppers-linear .md-stepper-title small:not(.md-stepper-error-message) {
   color: rgba(0, 0, 0, 0.26);
+}
+.md-steppers-linear .md-button[disabled] .md-stepper-title {
+  color: initial;
 }
 .md-steppers-alternative:not(.md-steppers-linear) .md-stepper-indicator:not(.md-active):not(.md-completed):hover .md-stepper-indicator-wrapper {
   background: none;

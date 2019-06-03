@@ -12,16 +12,11 @@
                     <span ng-if="!stepper.isCompleted(stepNumber)">{{ ::$ctrl.stepNumber+1 }}</span>
                     <md-icon md-svg-icon="steppers-check" class="md-stepper-icon md-warn" ng-if="stepper.isCompleted(stepNumber)"></md-icon>
                 </md-button>
-                <!--<div class="md-stepper-number" ng-hide="$ctrl.hasError">-->
-                    <!--<span ng-if="!$ctrl.$stepper.isCompleted($ctrl.stepNumber)">{{ ::$ctrl.stepNumber+1 }}</span>-->
-                    <!--<md-icon md-svg-icon="steppers-check" class="md-stepper-icon"-->
-                             <!--ng-if="$ctrl.$stepper.isCompleted($ctrl.stepNumber)"></md-icon>-->
-                <!--</div>-->
                 <div class="md-stepper-error-indicator md-warn" ng-show="$ctrl.hasError">
                     <md-icon md-svg-icon="steppers-warning"></md-icon>
                 </div>
 
-                <div class="md-stepper-text md-body-1">
+                <div class="md-stepper-title">
                     <span>{{ $ctrl.label }}</span>
                     <small ng-if="$ctrl.optional && !$ctrl.hasError">{{ $ctrl.optional }}</small>
                     <small class="md-stepper-error-message" ng-show="$ctrl.hasError">
