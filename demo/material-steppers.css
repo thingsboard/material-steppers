@@ -379,6 +379,7 @@ md-step-actions {
   margin-top: 16px;
   line-height: 18px;
   text-align: center;
+  color: initial;
 }
 .md-steppers-alternative .md-steppers-horizontal .md-stepper-title small {
   text-align: center;
@@ -460,7 +461,6 @@ md-step-actions {
 }
 md-step-body {
   position: relative;
-  overflow: auto;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
