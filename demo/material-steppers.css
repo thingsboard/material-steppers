@@ -73,6 +73,7 @@ md-step-actions {
 }
 .md-steppers {
   display: block;
+  padding: 16px 0;
 }
 .md-steppers:not(.md-steppers-linear) .md-stepper-indicator:not(.md-active):not(.md-completed):hover,
 .md-steppers:not(.md-steppers-linear) .md-stepper-indicator.md-editable.md-completed:hover {
