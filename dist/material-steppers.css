@@ -72,12 +72,7 @@ md-step-actions {
   }
 }
 .md-steppers {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  display: block;
 }
 .md-steppers:not(.md-steppers-linear) .md-stepper-indicator:not(.md-active):not(.md-completed):hover,
 .md-steppers:not(.md-steppers-linear) .md-stepper-indicator.md-editable.md-completed:hover {
