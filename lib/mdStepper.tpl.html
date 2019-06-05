@@ -7,8 +7,10 @@
     }">
     <div class="md-steppers-header-region">
         <md-steppers-header class="md-steppers-header md-steppers-horizontal md-whiteframe-1dp">
-            <md-button md-no-ink class="md-stepper-indicator md-primary" ng-repeat="(stepNumber, $step) in stepper.steps track by $index"
-                    ng-class="{
+            <md-button md-no-ink class="md-stepper-indicator md-primary"
+                       ng-repeat="(stepNumber, $step) in stepper.steps track by $index"
+                       aria-label="{{ $step.label }}"
+                       ng-class="{
                 'md-active': stepNumber === stepper.currentStep,
                 'md-completed': stepper.isCompleted(stepNumber),
                 'md-error': $step.hasError,
@@ -17,6 +19,7 @@
                 <div class="md-stepper-indicator-wrapper">
                     <md-button class="md-fab md-primary md-stepper-numbers"
                                ng-disabled="!stepper.isCompleted(stepNumber) && stepNumber !== stepper.currentStep"
+                               aria-label="{{ ::stepNumber+1 }}"
                                ng-hide="$step.hasError">
                         <span ng-if="!stepper.isCompleted(stepNumber)">{{ ::stepNumber+1 }}</span>
                         <md-icon md-svg-icon="steppers-check" class="md-stepper-icon"
