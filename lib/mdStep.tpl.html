@@ -10,12 +10,12 @@
                    aria-label="{{ $ctrl.label }}">
             <div class="md-stepper-indicator-wrapper">
                 <md-button class="md-fab md-primary md-stepper-numbers" md-no-ink
-                           ng-disabled="!stepper.isCompleted(stepNumber) && stepNumber !== stepper.currentStep"
-                           ng-hide="$step.hasError"
+                           ng-disabled="!$ctrl.$stepper.isCompleted($ctrl.stepNumber) && $ctrl.stepNumber !== $ctrl.$stepper.currentStep"
+                           ng-hide="$ctrl.$step.hasError"
                            aria-label="{{ ::$ctrl.stepNumber+1 }}">
-                    <span ng-if="!stepper.isCompleted(stepNumber)">{{ ::$ctrl.stepNumber+1 }}</span>
+                    <span ng-if="!$ctrl.$stepper.isCompleted($ctrl.stepNumber)">{{ ::$ctrl.stepNumber+1 }}</span>
                     <md-icon md-svg-icon="steppers-check" class="md-stepper-icon md-warn"
-                             ng-if="stepper.isCompleted(stepNumber)"></md-icon>
+                             ng-if="$ctrl.$stepper.isCompleted($ctrl.stepNumber)"></md-icon>
                 </md-button>
                 <div class="md-stepper-error-indicator md-warn" ng-show="$ctrl.hasError">
                     <md-icon md-svg-icon="steppers-warning"></md-icon>
