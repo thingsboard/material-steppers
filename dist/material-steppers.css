@@ -72,12 +72,8 @@ md-step-actions {
   }
 }
 .md-steppers {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  display: block;
+  padding: 16px 0;
 }
 .md-steppers:not(.md-steppers-linear) .md-stepper-indicator:not(.md-active):not(.md-completed):hover,
 .md-steppers:not(.md-steppers-linear) .md-stepper-indicator.md-editable.md-completed:hover {
@@ -87,7 +83,13 @@ md-step-actions {
 .md-steppers:not(.md-steppers-linear) .md-stepper-indicator.md-editable.md-completed:hover,
 .md-steppers:not(.md-steppers-linear) .md-stepper-indicator:not(.md-active):not(.md-completed):hover .md-stepper-indicator-wrapper,
 .md-steppers:not(.md-steppers-linear) .md-stepper-indicator.md-editable.md-completed:hover .md-stepper-indicator-wrapper {
-  background-color: #F6F6F6;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.md-steppers:not(.md-steppers-linear) .md-stepper-indicator:not(.md-active) .md-button.md-fab.md-stepper-numbers {
+  cursor: pointer;
+}
+.md-steppers:not(.md-steppers-linear) .md-stepper-indicator.md-active .md-button.md-fab.md-stepper-numbers {
+  cursor: default;
 }
 .md-steppers-header {
   margin: 0;
@@ -116,11 +118,12 @@ md-step-actions {
   top: 50%;
   left: 0;
   z-index: 1;
-  background-color: #E8E8E8;
+  background-color: rgba(0, 0, 0, 0.12);
   content: " ";
 }
-.md-stepper-indicator {
+.md-button.md-stepper-indicator {
   margin: 0;
+  min-height: auto;
   padding: 0 16px;
   position: relative;
   display: -webkit-flex;
@@ -141,37 +144,37 @@ md-step-actions {
   border: none;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.md-stepper-indicator:focus {
+.md-button.md-stepper-indicator:focus {
   outline: none;
 }
-.md-stepper-indicator.md-completed .md-stepper-number,
-.md-stepper-indicator.md-active .md-stepper-number {
-  background-color: #2196F3;
+.md-button.md-stepper-indicator.md-completed .md-stepper-number,
+.md-button.md-stepper-indicator.md-active .md-stepper-number {
+  background-color: currentColor;
 }
-.md-stepper-indicator.md-completed .md-stepper-title,
-.md-stepper-indicator.md-active .md-stepper-title {
+.md-button.md-stepper-indicator.md-completed .md-stepper-title,
+.md-button.md-stepper-indicator.md-active .md-stepper-title {
   color: rgba(0, 0, 0, 0.87);
 }
-.md-stepper-indicator.md-active .md-stepper-title,
-.md-stepper-indicator.md-editable .md-stepper-title {
+.md-button.md-stepper-indicator.md-active .md-stepper-title,
+.md-button.md-stepper-indicator.md-editable .md-stepper-title {
   font-weight: 500;
 }
-.md-stepper-indicator.md-error .md-stepper-title {
+.md-button.md-stepper-indicator.md-error .md-stepper-title {
   color: #f44336;
 }
-.md-stepper-indicator:first-child {
+.md-button.md-stepper-indicator:first-child {
   padding-left: 0;
 }
-.md-stepper-indicator:last-child {
+.md-button.md-stepper-indicator:last-child {
   padding-right: 0;
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.md-stepper-indicator:last-child .md-stepper-indicator-wrapper {
+.md-button.md-stepper-indicator:last-child .md-stepper-indicator-wrapper {
   padding-right: 24px;
 }
-.md-stepper-indicator .md-ripple-container {
+.md-button.md-stepper-indicator .md-ripple-container {
   z-index: 3;
 }
 .md-stepper-indicator-wrapper {
@@ -187,7 +190,6 @@ md-step-actions {
   -webkit-align-content: center;
       -ms-flex-line-pack: center;
           align-content: center;
-  background-color: #fff;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .md-stepper-number {
@@ -241,6 +243,7 @@ md-step-actions {
   position: relative;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   font-size: 14px;
+  font-weight: 400;
   line-height: 24px;
 }
 .md-steppers-content {
@@ -287,18 +290,24 @@ md-step-actions {
 .md-steppers-linear .md-stepper-indicator.md-editable.md-completed:hover .md-stepper-number:after {
   background-color: #F6F6F6;
 }
+.md-steppers-linear .md-stepper-indicator .md-button.md-fab.md-stepper-numbers {
+  cursor: default;
+}
 .md-steppers-linear .md-stepper-title {
   color: rgba(0, 0, 0, 0.26);
 }
 .md-steppers-linear .md-stepper-title small:not(.md-stepper-error-message) {
   color: rgba(0, 0, 0, 0.26);
 }
+.md-steppers-linear .md-button[disabled] .md-stepper-title {
+  color: initial;
+}
 .md-steppers-alternative:not(.md-steppers-linear) .md-stepper-indicator:not(.md-active):not(.md-completed):hover .md-stepper-indicator-wrapper {
   background: none;
 }
 .md-steppers-alternative:not(.md-steppers-linear) .md-stepper-indicator:not(.md-active):not(.md-completed):hover .md-stepper-number:before,
 .md-steppers-alternative:not(.md-steppers-linear) .md-stepper-indicator:not(.md-active):not(.md-completed):hover .md-stepper-number:after {
-  background-color: #F6F6F6;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .md-steppers-alternative .md-steppers-horizontal .md-stepper-indicator {
   min-height: 104px;
@@ -366,6 +375,7 @@ md-step-actions {
   margin-top: 16px;
   line-height: 18px;
   text-align: center;
+  color: initial;
 }
 .md-steppers-alternative .md-steppers-horizontal .md-stepper-title small {
   text-align: center;
@@ -377,7 +387,7 @@ md-step-actions {
   padding: 8px 24px;
 }
 .md-steppers-vertical .md-steppers-scope {
-  margin-left: 20px;
+  margin-left: 19px;
   border-left: 1px solid  #E8E8E8;
   padding-left: 20px;
 }
@@ -447,7 +457,6 @@ md-step-actions {
 }
 md-step-body {
   position: relative;
-  overflow: auto;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -505,4 +514,23 @@ md-step-body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.md-button.md-fab.md-stepper-numbers {
+  width: 24px;
+  height: 24px;
+  min-height: 24px;
+  margin: 0 8px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+  box-shadow: none;
+  padding: 0;
+  pointer-events: none;
+}
+.md-button.md-fab.md-stepper-numbers.ng-hide {
+  transition: none;
+}
+.md-button:not([disabled]).md-fab:active {
+  box-shadow: none;
 }

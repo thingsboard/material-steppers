@@ -75,5 +75,9 @@ var StepperDemoController = (function () {
 angular.module('SteppersApp', [
     'ngMaterial',
     'mdSteppers'
-]).controller('SteppersDemoCtrl', StepperDemoController);
+]).config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+        .primaryPalette('pink')
+        .accentPalette('orange');
+}).controller('SteppersDemoCtrl', StepperDemoController);
 

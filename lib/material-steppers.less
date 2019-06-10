@@ -75,8 +75,8 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
 
 
 .md-steppers {
-  display: flex;
-  flex-flow: column;
+  display: block;
+  padding: 16px 0;
 
   &:not(.md-steppers-linear) {
     .md-stepper-indicator {
@@ -86,7 +86,28 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
 
         &,
         .md-stepper-indicator-wrapper {
-          background-color: #F6F6F6;
+          background-color: rgba(0,0,0,.04);
+        }
+      }
+
+
+      &:not(.md-active) {
+        .md-button {
+          &.md-fab {
+            &.md-stepper-numbers {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      &.md-active {
+        .md-button {
+          &.md-fab {
+            &.md-stepper-numbers {
+              cursor: default;
+            }
+          }
         }
       }
     }
@@ -119,14 +140,15 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
       top: 50%;
       left: 0;
       z-index: 1;
-      background-color: #E8E8E8;
+      background-color: rgba(0,0,0,.12);
       content: " ";
     }
   }
 }
 
-.md-stepper-indicator {
+.md-button.md-stepper-indicator {
   margin:0;
+  min-height: auto;
   padding: 0 16px;
   position: relative;
   display: flex;
@@ -146,7 +168,7 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
   &.md-completed,
   &.md-active {
     .md-stepper-number {
-      background-color: #2196F3;
+      background-color: currentColor;
     }
 
     .md-stepper-title {
@@ -198,7 +220,6 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
   display: flex;
   align-items: center;
   align-content: center;
-  background-color: #fff;
   transition: @swift-ease-out;
 }
 
@@ -264,6 +285,7 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
   position: relative;
   transition: @swift-ease-out;
   font-size: 14px;
+  font-weight: 400;
   line-height: 24px;
 }
 
@@ -343,6 +365,14 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
         }
       }
     }
+
+    .md-button {
+      &.md-fab {
+        &.md-stepper-numbers {
+          cursor: default;
+        }
+      }
+    }
   }
 
   .md-stepper-title {
@@ -350,6 +380,12 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
 
     small:not(.md-stepper-error-message) {
       color: rgba(0, 0, 0, .26);
+    }
+  }
+
+  .md-button[disabled]{
+    .md-stepper-title {
+      color: initial;
     }
   }
 }
@@ -367,7 +403,7 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
       .md-stepper-number {
         &:before,
         &:after {
-          background-color: #F6F6F6;
+          background-color: rgba(255,255,255,0.1);
         }
       }
     }
@@ -442,6 +478,7 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
       margin-top: 16px;
       line-height: 18px;
       text-align: center;
+      color: initial;
       small {
         text-align: center;
       }
@@ -472,7 +509,7 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
   
   .md-steppers-scope {
     //display: block;
-    margin-left:20px;
+    margin-left: 19px;
     border-left: 1px solid  #E8E8E8;
     padding-left: 20px;
   }
@@ -541,7 +578,6 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
   width: 100%;
   background-color: #fff;
   align-items: center;
-//   display: flex;
   padding-left: 10px;
   z-index: 2;
   box-sizing: border-box;
@@ -552,8 +588,6 @@ md-steppers-header,md-steppers-mobile-header, md-step-actions {
 }
 md-step-body{
   position: relative;
-//   padding: 24px;
-  overflow: auto;
   display: flex;
   flex-direction: column;
 }
@@ -598,4 +632,34 @@ md-step-body{
     max-width: 100%;
     justify-content: center;
   }
+}
+
+.md-button {
+  &.md-fab{
+    &.md-stepper-numbers{
+      @size: 24px;
+
+      width: @size;
+      height: @size;
+      min-height: @size;
+      margin: 0 8px;
+      transition: @swift-ease-out;
+      font-size: 12px;
+      line-height: @size;
+      text-align: center;
+      box-shadow: none;
+      padding: 0;
+      pointer-events: none;
+
+      &.ng-hide {
+        transition: none;
+      }
+    }
+  }
+  &:not([disabled]).md-fab:active {
+    box-shadow: none;
+  }
+  //&.md-primary.md-fab:not([disabled]):hover, .md-primary.md-fab:not([disabled]):hover, .md-primary.md-fab:not([disabled]):hover{
+  //  background-color: transparent;
+  //}
 }
